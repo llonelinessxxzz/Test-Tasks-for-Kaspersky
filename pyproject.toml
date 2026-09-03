@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-rag"
+version = "0.1.0"
+description = "Local bilingual customer-support RAG"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "pydantic>=2.10,<3.0",
+    "pydantic-settings>=2.7,<3.0",
+    "httpx>=0.28,<1.0",
+    "tenacity>=9.0,<10.0",
+    "structlog>=24.4,<26.0",
+    "numpy>=1.26,<3.0",
+    "rank-bm25==0.2.2",
+    "sentence-transformers>=3.4,<6.0",
+    "transformers>=4.48,<5.0",
+    "beautifulsoup4>=4.12,<5.0",
+    "lxml>=5.3,<7.0",
+]
+
+[project.optional-dependencies]
+web = ["fastapi==0.141.1", "uvicorn==0.52.4"]
+dev = [
+    "pytest>=8.3,<9.0",
+    "pytest-asyncio>=0.25,<1.0",
+    "ruff>=0.9,<1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"support_rag.web" = ["static/*.html", "static/*.css", "static/*.js"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [".cache", ".venv", "data", "eval/results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]

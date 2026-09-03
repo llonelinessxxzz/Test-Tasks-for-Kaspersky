@@ -1,0 +1,35 @@
+{"id":"q001","question":"Как активировать касперского через My Kaspersky?","relevant_document_ids":["ru-myk-activate"],"language":"ru","query_type":"lexical","difficulty":"easy"}
+{"id":"q002","question":"у меня есть код активации куда его вводить в аккаунте","relevant_document_ids":["ru-myk-activate","ru-myk-add-subscription"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q003","question":"Как подключить новый ноутбук к моему аккаунту My Kaspersky?","relevant_document_ids":["ru-myk-connect-device"],"language":"ru","query_type":"semantic","difficulty":"easy"}
+{"id":"q004","question":"хочу добавить еще один компьютер в май касперский как это сделать","relevant_document_ids":["ru-myk-connect-device"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q005","question":"Как отправить мою подписку на другое устройство?","relevant_document_ids":["ru-myk-send-subscription"],"language":"ru","query_type":"lexical","difficulty":"easy"}
+{"id":"q006","question":"купил защиту на несколько устройств как передать лицензию на второй комп","relevant_document_ids":["ru-myk-send-subscription"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q007","question":"Как отключить автопродление подписки?","relevant_document_ids":["ru-myk-auto-renew"],"language":"ru","query_type":"lexical","difficulty":"easy"}
+{"id":"q008","question":"с меня опять не списывали деньги как вырубить автоматическое продление касперского","relevant_document_ids":["ru-myk-auto-renew"],"language":"ru","query_type":"noisy","difficulty":"medium"}
+{"id":"q009","question":"Хочу изменить пароль от My Kaspersky","relevant_document_ids":["ru-myk-change-password"],"language":"ru","query_type":"lexical","difficulty":"easy"}
+{"id":"q010","question":"где поменять пасс от личного кабинета касперского","relevant_document_ids":["ru-myk-change-password"],"language":"ru","query_type":"noisy","difficulty":"medium"}
+{"id":"q011","question":"Забыл пароль от My Kaspersky и не могу войти","relevant_document_ids":["ru-myk-recover-password"],"language":"ru","query_type":"semantic","difficulty":"easy"}
+{"id":"q012","question":"не помню пасворд от май касперский как востановить доступ","relevant_document_ids":["ru-myk-recover-password"],"language":"ru","query_type":"noisy","difficulty":"hard"}
+{"id":"q013","question":"Как включить двухфакторную аутентификацию в My Kaspersky?","relevant_document_ids":["ru-myk-two-factor"],"language":"ru","query_type":"semantic","difficulty":"easy"}
+{"id":"q014","question":"хочу чтобы при входе кроме пароля спрашивал код из authenticator","relevant_document_ids":["ru-myk-two-factor"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q015","question":"Как вручную добавить подписку в аккаунт?","relevant_document_ids":["ru-myk-add-subscription"],"language":"ru","query_type":"lexical","difficulty":"easy"}
+{"id":"q016","question":"код купил отдельно а подписки в личном кабинете нет как ее туда добавить","relevant_document_ids":["ru-myk-add-subscription"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q017","question":"Как запустить быструю проверку компьютера удаленно через My Kaspersky?","relevant_document_ids":["ru-myk-quick-scan"],"language":"ru","query_type":"lexical","difficulty":"easy"}
+{"id":"q018","question":"нужно быстренько проверить комп на вирусы через аккаунт","relevant_document_ids":["ru-myk-quick-scan"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q019","question":"Как запустить полную проверку устройства?","relevant_document_ids":["ru-myk-full-scan"],"language":"ru","query_type":"lexical","difficulty":"easy"}
+{"id":"q020","question":"хочу чтобы касперский проверил вообще весь компьютер а не только важные файлы","relevant_document_ids":["ru-myk-full-scan"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q021","question":"Как отвязать старый компьютер от My Kaspersky?","relevant_document_ids":["ru-myk-disconnect-device"],"language":"ru","query_type":"semantic","difficulty":"easy"}
+{"id":"q022","question":"продал ноут и хочу убрать его из моего аккаунта касперского","relevant_document_ids":["ru-myk-disconnect-device"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q023","question":"Как изменить банковскую карту для оплаты подписки?","relevant_document_ids":["ru-myk-payment-method"],"language":"ru","query_type":"semantic","difficulty":"easy"}
+{"id":"q024","question":"старая карточка закончилась где обновить способ оплаты касперского","relevant_document_ids":["ru-myk-payment-method"],"language":"ru","query_type":"noisy","difficulty":"medium"}
+{"id":"q025","question":"забыл пароль от аккаунта и еще хочу отключить автопродление","relevant_document_ids":["ru-myk-recover-password","ru-myk-auto-renew"],"language":"ru","query_type":"multi_intent","difficulty":"hard"}
+{"id":"q026","question":"Как полностью удалить Kaspersky с Windows?","relevant_document_ids":["ru-win-uninstall"],"language":"ru","query_type":"semantic","difficulty":"easy"}
+{"id":"q027","question":"касперский больше не нужен как снести его с компа","relevant_document_ids":["ru-win-uninstall"],"language":"ru","query_type":"noisy","difficulty":"medium"}
+{"id":"q028","question":"При установке Kaspersky пишет что есть несовместимая программа. Что делать?","relevant_document_ids":["ru-win-incompatible-apps"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q029","question":"на компе уже есть другой антивирус и касперский с ним конфликтует как удалить конфликтующее ПО","relevant_document_ids":["ru-win-incompatible-apps"],"language":"ru","query_type":"semantic","difficulty":"medium"}
+{"id":"q030","question":"Why can't I use every app included in a subscription shared with me?","relevant_document_ids":["en-subscription-limitations"],"language":"en","query_type":"semantic","difficulty":"medium"}
+{"id":"q031","question":"my kaspersky subscription doesnt work after moving to another country","relevant_document_ids":["en-subscription-limitations","en-regional-restrictions"],"language":"en","query_type":"multi_intent","difficulty":"hard"}
+{"id":"q032","question":"I forgot the main password for my password vault, can I recover it?","relevant_document_ids":["en-forgot-main-password"],"language":"en","query_type":"semantic","difficulty":"medium"}
+{"id":"q033","question":"how do i change the main password protecting my password manager storage","relevant_document_ids":["en-change-main-password"],"language":"en","query_type":"semantic","difficulty":"medium"}
+{"id":"q034","question":"Kaspersky features are unavailable in my country, are there regional restrictions?","relevant_document_ids":["en-regional-restrictions"],"language":"en","query_type":"semantic","difficulty":"medium"}
+{"id":"q035","question":"what information should i prepare before contacting kaspersky customer service","relevant_document_ids":["en-prepare-customer-service","en-customer-service"],"language":"en","query_type":"multi_intent","difficulty":"hard"}

@@ -1,0 +1,22 @@
+{"id":"g001","question":"Как отключить автопродление подписки?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-auto-renew"]}
+{"id":"g002","question":"Не хочу чтобы подписка продлевалась сама, как выключить?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-auto-renew"]}
+{"id":"g003","question":"How can I disable automatic subscription renewal?","language":"en","expected_abstain":false,"expected_document_ids":["ru-myk-auto-renew"]}
+{"id":"g004","question":"Как изменить способ оплаты?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-payment-method"]}
+{"id":"g006","question":"How do I change my payment method?","language":"en","expected_abstain":false,"expected_document_ids":["ru-myk-payment-method"]}
+{"id":"g009","question":"I forgot my My Kaspersky password. How can I recover it?","language":"en","expected_abstain":false,"expected_document_ids":["ru-myk-recover-password"]}
+{"id":"g011","question":"How do I change my My Kaspersky password?","language":"en","expected_abstain":false,"expected_document_ids":["ru-myk-change-password"]}
+{"id":"g012","question":"Как настроить двухэтапную проверку?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-two-factor"]}
+{"id":"g013","question":"Хочу включить двухфакторную защиту аккаунта","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-two-factor"]}
+{"id":"g014","question":"How can I enable two-step verification for my account?","language":"en","expected_abstain":false,"expected_document_ids":["ru-myk-two-factor"]}
+{"id":"g015","question":"Как подключить устройство к аккаунту My Kaspersky?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-connect-device"]}
+{"id":"g016","question":"How do I connect a device to my My Kaspersky account?","language":"en","expected_abstain":false,"expected_document_ids":["ru-myk-connect-device"]}
+{"id":"g017","question":"Как отключить устройство от моего аккаунта?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-disconnect-device"]}
+{"id":"g019","question":"Как удалить Kaspersky с Windows?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-win-uninstall"]}
+{"id":"g020","question":"How do I remove Kaspersky from Windows?","language":"en","expected_abstain":false,"expected_document_ids":["ru-win-uninstall"]}
+{"id":"g021","question":"Как заменить масло в Toyota Corolla?","language":"ru","expected_abstain":true,"expected_document_ids":[]}
+{"id":"g022","question":"Как приготовить борщ?","language":"ru","expected_abstain":true,"expected_document_ids":[]}
+{"id":"g023","question":"What is the weather in London tomorrow?","language":"en","expected_abstain":true,"expected_document_ids":[]}
+{"id":"g024","question":"Write a Python function that sorts a list.","language":"en","expected_abstain":true,"expected_document_ids":[]}
+{"id":"reg-password-001","question":"Как восстановить пароль от My Kaspersky?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-recover-password"]}
+{"id":"reg-password-002","question":"Забыл пароль от My Kaspersky. Как восстановить доступ к аккаунту?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-recover-password"]}
+{"id":"reg-password-003","question":"Не помню пароль от аккаунта My Kaspersky — что делать?","language":"ru","expected_abstain":false,"expected_document_ids":["ru-myk-recover-password"]}

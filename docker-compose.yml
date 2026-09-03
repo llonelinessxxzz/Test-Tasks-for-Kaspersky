@@ -1,0 +1,107 @@
+name: customer-rag
+
+services:
+  retrieval:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+      target: retrieval
+    image: customer-rag-retrieval:local
+    env_file: .env
+    environment:
+      EMBEDDING_DEVICE: cpu
+      MODEL_CACHE_DIR: /models
+      PROCESSED_DATA_DIR: /app/data/processed
+      INDEX_DIR: /app/data/index
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    volumes:
+      - ${MODEL_CACHE_HOST_DIR:-./.cache/huggingface}:/models:ro
+      - ./data:/app/data:ro
+    networks: [backend]
+    restart: unless-stopped
+    init: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8081/healthz', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 90s
+
+  vllm:
+    image: vllm/vllm-openai:v0.28.0
+    command:
+      - --model
+      - ${LLM_MODEL:-Qwen/Qwen2.5-3B-Instruct-AWQ}
+      - --max-model-len
+      - "2048"
+      - --gpu-memory-utilization
+      - "0.75"
+      - --max-num-seqs
+      - "1"
+      - --enforce-eager
+    environment:
+      HF_HUB_OFFLINE: "1"
+      VLLM_WSL2_ENABLE_PIN_MEMORY: "1"
+    volumes:
+      - ${VLLM_CACHE_DIR:-${HOME}/.cache/huggingface}:/root/.cache/huggingface
+    shm_size: 1gb
+    networks: [backend]
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 120s
+
+  ui:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+      target: ui
+    image: customer-rag-ui:local
+    env_file: .env
+    environment:
+      LLM_BASE_URL: http://vllm:8000/v1
+      WEB_RETRIEVAL_URL: http://retrieval:8081
+      WEB_STATE_DIR: /app/state
+      WEB_DEMO_MODE: ${WEB_DEMO_MODE:-true}
+      WEB_PUBLIC_URL: ${PUBLIC_URL:-https://tadpole-trimness-hunk.ngrok-free.dev}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - chat-data:/app/state
+    networks: [frontend, backend]
+    depends_on:
+      retrieval:
+        condition: service_healthy
+      vllm:
+        condition: service_healthy
+    restart: unless-stopped
+    init: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/healthz', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 10s
+
+networks:
+  frontend:
+  backend:
+    internal: true
+
+volumes:
+  chat-data:

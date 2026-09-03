@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "embedding_model": "ai-forever/ru-en-RoSBERTa",
+  "embedding_dimension": 1024,
+  "embedding_max_length": 512,
+  "document_prefix": "search_document:",
+  "retrieval_text_version": 1,
+  "chunk_count": 93,
+  "chunk_ids_sha256": "a6fdddd0a60e6ac1f545b83a1d7fb3580546be5f16ca80979ae932720ffed9c7"
+}

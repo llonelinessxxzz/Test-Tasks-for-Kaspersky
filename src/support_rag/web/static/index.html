@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a20">
+  <title>RAG-assistant</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/styles.css?v=20260903-autosize">
+  <script src="/static/app.js?v=20260903-support" defer></script>
+</head>
+<body>
+  <section id="session-loading" class="session-loading" role="status">
+    <p id="session-message">Открываем чат…</p>
+    <button id="session-retry" class="primary" hidden>Открыть чат</button>
+  </section>
+  <section id="login-screen" class="login-screen" hidden>
+    <div class="login-card">
+      <div class="brand-mark">S<span>•</span></div>
+      <p class="eyebrow">SUPPORT / PRIVATE ACCESS</p>
+      <h1>База знаний.<br>Живой диалог.</h1>
+      <p class="login-copy">Помощник по продуктам Kaspersky.<br>Ответы по материалам базы, с источниками.</p>
+      <form id="login-form">
+        <label for="access-code">Код доступа</label>
+        <div class="password-field"><input id="access-code" type="password" autocomplete="current-password" required placeholder="Введите код доступа"><button type="button" id="show-code" aria-label="Показать код">Показать</button></div>
+        <button class="primary login-submit" type="submit">Открыть чат <span aria-hidden="true">↗</span></button>
+        <p id="login-error" class="error" role="alert"></p>
+      </form>
+      <div class="login-footer"><span class="dot"></span> Локальная модель · Приватная сессия</div>
+    </div>
+    <div class="login-art" aria-hidden="true"><div class="art-label">KNOWLEDGE<br>IN CONTEXT.</div><div class="art-line"></div><span>01 / Retrieve<br>02 / Generate<br>03 / Verify</span></div>
+  </section>
+
+  <div id="workspace" class="workspace" hidden>
+    <aside id="sidebar" class="sidebar">
+      <a class="brand" href="/" aria-label="Support"><div class="brand-mark small">S<span>•</span></div><div>Support<small>KNOWLEDGE ASSISTANT</small></div></a>
+      <button id="new-chat" class="new-chat"><span aria-hidden="true">＋</span> Новый диалог</button>
+      <div class="section-label">ВАШИ ДИАЛОГИ <span id="chat-count">0</span></div>
+      <nav id="chat-list" aria-label="История диалогов"></nav>
+      <div class="sidebar-bottom">
+        <div class="privacy"><span class="dot"></span><div>История сохранена<small>Доступна только этой сессии</small></div></div>
+        <button id="logout" class="text-button">Завершить сессию <span aria-hidden="true">↗</span></button>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button id="toggle-sidebar" class="icon-button menu" aria-label="Открыть историю">☰</button>
+        <div class="breadcrumb">Рабочее пространство <span>/</span> <strong id="chat-title">Новый диалог</strong></div>
+        <div id="service-status" class="service-status"><span class="dot"></span> Подключение…</div>
+      </header>
+      <div id="conversation" class="conversation" aria-live="polite">
+        <section id="welcome" class="welcome">
+          <div class="welcome-icon" aria-hidden="true">✳</div>
+          <p class="eyebrow">КАСПЕРСКИЙ / БАЗА ЗНАНИЙ</p>
+          <h1>Чем помочь?</h1>
+          <p>Задайте вопрос на русском или английском.<br>Найдём инструкцию и покажем, откуда взят ответ.</p>
+          <div class="suggestions">
+            <button data-question="Как отключить автопродление подписки?"><span>Подписки</span>Отключить автопродление <b aria-hidden="true">↗</b></button>
+            <button data-question="Как восстановить пароль от My Kaspersky?"><span>Мой аккаунт</span>Восстановить пароль <b aria-hidden="true">↗</b></button>
+            <button data-question="How do I remove Kaspersky from Windows?"><span>Installation</span>Remove Kaspersky from Windows <b aria-hidden="true">↗</b></button>
+          </div>
+        </section>
+        <div id="messages" class="messages"></div>
+      </div>
+      <div class="composer-wrap">
+        <div id="request-error" class="request-error" role="alert" hidden></div>
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="question">Ваш вопрос</label>
+          <textarea id="question" rows="1" maxlength="1000" placeholder="Напишите свой вопрос…" required></textarea>
+          <div class="composer-bottom">
+            <label class="history-toggle"><input id="use-history" type="checkbox" checked> Учитывать диалог</label>
+            <div><span class="keyboard-hint">Enter — отправить</span><button id="send" type="submit" class="send" aria-label="Отправить вопрос">↑</button></div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+  <dialog id="confirm-dialog"><form method="dialog"><h2 id="confirm-title">Удалить диалог?</h2><p id="confirm-copy">Диалог и его сообщения будут удалены.</p><div class="dialog-actions"><button value="cancel">Отмена</button><button value="confirm" class="danger">Подтвердить</button></div></form></dialog>
+</body>
+</html>
